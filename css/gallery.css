@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-image: url(../images/backgrounbd.jpeg);
+    background-attachment: fixed;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    border-bottom: 2px ridge white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+header h2{
+    color: white;
+    text-shadow: 1px 1px 1px white;
+}
+
+header img{
+    max-width: 250px;
+    padding: .75em;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+.column img {
+    margin-top: 8px;
+    max-width: 100%;
+    border: 2px ridge white;
+    border-radius: 10px;
+}
+
+#cornerBtn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    padding: 1em 2em;
+    background-color: rgba(255, 255, 255, 0.212);
+    border: rgba(255, 255, 255, 0.212);
+    border-radius: 10px;
+    font-size: 120%;
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+}
+#cornerBtn:hover{
+    background-color: black;
+    color: white;
+}
+
+footer{
+    border-top: 2px ridge white;
+    align-items: center;
+    text-align: center;
+}
+
+footer p{
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+ @media (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+
+    .column img{
+        max-width: 100%;
+    }
+
+    header{
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    
+  }

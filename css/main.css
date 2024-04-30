@@ -26,6 +26,73 @@ header a img {
     margin: 1vh;
 }
 
+/* Nav Menu */
+.navmenu{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(61, 0, 0);
+    background-image: linear-gradient(to right, rgb(61,0,0), black, rgb(61,0,0));
+    border-block: 1px solid rgba(255,255,255,.3);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin-bottom: 2em;
+}
+
+.navmenu > div{
+    flex: 0 1 max-content;
+}
+
+.navmenu a{
+    display: block;
+    text-align: center;
+    padding: 1em 2em;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.submenu-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 20%;
+    background-image: linear-gradient(to right, black, rgb(61,0,0));
+    border-inline: 1px solid rgb(61,0,0);
+    border-bottom: 1px solid rgb(61,0,0);
+}
+
+.submenu a{
+    text-align: left;
+}
+
+.submenu:hover .submenu-content{
+    display: block;
+}
+
+.toggle-menu{
+    display: none;
+    z-index: 9999;
+    background-color: transparent;
+    width: 25px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: none;
+    background-image: url(../images/hamburger.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.submenu i{
+    transition: transform linear 300ms;
+}
+
+.submenu:hover i{
+    transform: rotate(180deg);
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -123,6 +190,47 @@ footer p {
         max-width: 300px;
         margin: 0 auto;
     }
+
+    .toggle-menu{
+        display: block;
+    }
+
+    .navmenu{
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 80%;
+        padding-top: 10em;
+        transition: transform linear 300ms;
+        transform: translateX(-100%);
+    }
+
+    .toggle-menu[data-visible='true'] {
+        background-image: url(../images/closemobile.png);
+    }
+
+    .navmenu[data-visible='true'] {
+        transform: translateX(0%);
+    }
+
+    .navmenu.active{
+        display: block;
+    }
+
+    .navmenu a{
+        text-align: left;
+    }
+
+    .submenu-content{
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+
     main {
         flex-direction: column;
     }
